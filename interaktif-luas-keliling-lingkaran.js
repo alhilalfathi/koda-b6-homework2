@@ -1,9 +1,9 @@
 
 console.log("Masukkan nilai jari-jari=")
 process.stdin.on('data', (data) => {
-const rstring = data.toString().trim();
+const rString = data.toString().trim()
 // console.log(rstring)
-const r = Number(rstring)
+const r = Number(rString)
 // console.log(r)
 
 let phi = 0

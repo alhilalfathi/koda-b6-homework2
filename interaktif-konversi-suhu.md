@@ -5,7 +5,7 @@ flowchart TD
     start@{ shape: circle}
     outputAwal@{ shape: lean-r, label: "Masukan Nilai Suhu = "}
     iterasiAwal@{ label: "count++"}
-    ifAwal1@{ shape: diamond, label:" count === 1"}
+    ifAwal1@{ shape: diamond, label: "count === 1"}
     ifAwal1True1@{ label: "inputTempString = input
     temp = Number(inputTempString)"}
     ifAwal1True2@{ shape: lean-r, label: "#quot;Nilai Suhu#quot;+temp"}
@@ -80,7 +80,7 @@ ifAwal1--false-->ifAwal2
 ifAwal1--true-->ifAwal1True1-->ifAwal1True2-->ifAwal1True3-->iterasiAwal
 ifAwal2--true-->ifAwal2True1-->ifAwal2True2-->ifAwal2True3-->iterasiAwal
 ifAwal3--false------------------------->stop
-ifAwal2--false-->ifAwal3--true-->ifSource1
+ifAwal2--false------->ifAwal3--true-->ifSource1
 
 ifSource1--false-->ifSource2
 ifSource1--true-->ifCelcius1

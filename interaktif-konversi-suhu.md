@@ -12,6 +12,10 @@ flowchart TD
     ifAwal1True3@{ shape: lean-r, label: "#quot;Masukan Jenis Suhu#quot;"}
 
     ifAwal2@{ shape: diamond, label: "count === 2"}
+    ifAwal2True1@{ label:"tempSource = input"}
+    ifAwal2True2@{ shape: lean-r, label: "#quot;Suhu dari:#quot;+tempSource"}
+    ifAwal2True3@{ shape: lean-r, label: "#quot;Konversi ke = #quot;"}
+
     ifAwal3@{shape: diamond, label: "count === 3"}
     
     error@{ shape: lean-r, label: "#quot;Input Invalid#quot;"}
@@ -74,7 +78,9 @@ flowchart TD
 start-->outputAwal-->iterasiAwal-->ifAwal1
 ifAwal1--false-->ifAwal2
 ifAwal1--true-->ifAwal1True1-->ifAwal1True2-->ifAwal1True3-->iterasiAwal
-ifAwal2--false-->ifAwal3-->ifSource1
+ifAwal2--true-->ifAwal2True1-->ifAwal2True2-->ifAwal2True3-->iterasiAwal
+ifAwal3--false------------------------->stop
+ifAwal2--false-->ifAwal3--true-->ifSource1
 
 ifSource1--false-->ifSource2
 ifSource1--true-->ifCelcius1

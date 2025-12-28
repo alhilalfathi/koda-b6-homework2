@@ -15,7 +15,7 @@ process.stdin.on("data", (data) => {
   } else if (count === 2) {
     tempSource = input;
     console.log(`Suhu dari: ${tempSource}`);
-    console.log("Jenis suhu akan diubah ke = ")
+    console.log("Konversi ke = ")
   } else if (count === 3) {
     convertTo = input;
     console.log(`Ubah ke: ${convertTo}`);

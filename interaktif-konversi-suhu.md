@@ -3,6 +3,11 @@
 ```mermaid
 flowchart TD
     start@{ shape: circle}
+    outputAwal@{ shape: lean-r, label: "Masukan Nilai Suhu = "}
+    iterasiAwal@{ label: "count++"}
+    ifAwal1@{ shape: diamond, label:" count === 1"}
+    ifAwal2@{ shape: diamond, label: "count === 2"}
+    ifAwal3@{shape: diamond, label: "count === 3"}
     input1@{ shape: lean-r, label: "Input: temp = 34"}
     input2@{ shape: lean-r, label: "Input: tempSource = #quot;Fahrenheit#quot;"}
     input3@{ shape: lean-r, label: "Input: convertTo=  #quot;Reamur#quot;"}
@@ -63,7 +68,10 @@ flowchart TD
 
 
 
-start-->input1-->input2-->input3-->ifSource1
+start-->outputAwal-->iterasiAwal-->ifAwal1
+ifAwal1--false-->ifAwal2
+ifAwal2--false-->ifAwal3-->input1
+input1-->input2-->input3-->ifSource1
 
 ifSource1--false-->ifSource2
 ifSource1--true-->ifCelcius1
